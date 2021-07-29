@@ -20,11 +20,11 @@ app.use(passport.initialize());
 passportConfig();
 
 app.use("/api/users", UserRoutes);
-app.use(express.static(path.join(__dirname, "./frontend/build")));
+app.use(express.static(path.join(__dirname, "./client/build")));
 
 // Right before your app.listen(), add this:
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "./frontend/build", "index.html"));
+  res.sendFile(path.join(__dirname, "./client/build", "index.html"));
 });
 
 const PORT = process.env.PORT || 5000;
