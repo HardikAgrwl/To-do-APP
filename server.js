@@ -19,10 +19,6 @@ app.use(passport.initialize());
 
 passportConfig();
 
-app.get("/", (req, res) => {
-  res.send("API is running");
-});
-
 app.use("/api/users", UserRoutes);
 app.use(express.static(path.join(__dirname, "./frontend/build")));
 
